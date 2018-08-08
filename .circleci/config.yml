@@ -19,4 +19,4 @@ jobs:
             - node_modules
           key: dependencies-{{ checksum "package.json" }}
       - run: cp env.example.js env.js
-      - run: yarn build
+      - run: yarn start
