@@ -2,13 +2,13 @@ version: 2
 jobs:
   build:
     docker:
-      - images: circleci/node:9.5.0
+      - image: circleci/node:9.5.0
     working_directory: ~/repo
     branchs:
       only:
         - master
     steps:
-      - chekout
+      - checkout
       - restore_cache:
         keys:
         - dependencies-{{ checksum "package.json" }}
