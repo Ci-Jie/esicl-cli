@@ -19,7 +19,7 @@ const kubernetes = {
     token: '<admin-token>'
   },
   master: {
-    ip: '<k8s-master-ip>
+    ip: '<k8s-master-ip>'
   }
 }
 

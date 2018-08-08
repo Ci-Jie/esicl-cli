@@ -19,4 +19,6 @@ jobs:
             - node_modules
           key: dependencies-{{ checksum "package.json" }}
       - run: cp env.example.js env.js
+      - run: sed -i.bak 's/<k8s-master-ip>/211.20.7.115/g' env.js
+      - run: sed -i.bak 's/<admin-token>/eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJhZG1pbi11c2VyLXRva2VuLW53MjJyIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6ImFkbWluLXVzZXIiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiIwZTAyNGY2Mi05OTRlLTExZTgtYWM3Mi1lYzA4NmIwNWQ0YjYiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6a3ViZS1zeXN0ZW06YWRtaW4tdXNlciJ9.SIID9Sw4YBu41TN6Nr74329gFnItiIrcNN_BwQrXI5RBdLqiPGLtFFDxdnC2ijCINpHqO6A9f1dZ2M7XT-9NnIyNZU3QvU02ZqB3K9OVP6OFps0yJbL0YEyIZVhe5V9NCaqHZIISzUCew3FfWHja1DP8-yd-gudyK-pTn-vqaEZtxUGoyjoAmDrdaikRrzMnFisMRtcQC254la84iDyWJJvsjgnZpI5S0RrIDVCRW76BtX-4uMEtstIVEC4Q5NQjMXvwZKAFhFFjkr-wnE_0roy5xhn9CMzPjZSZZPi88iH1Sg6mNsmK727V59ldvWDcfTuL7p4yCny3tVxEmF6CSw/g' env.js
       - run: yarn start
