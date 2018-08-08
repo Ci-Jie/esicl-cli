@@ -2,6 +2,8 @@
 
 This project is dashboard of service in Emerging Smart IoT Computing System Lab (ESICL). Including ICINGA, Kubernetes, Etherum and Smart Data Center.
 
+[![CircleCI](https://circleci.com/gh/Ci-Jie/esicl-cli/tree/master.svg?style=svg)](https://circleci.com/gh/Ci-Jie/esicl-cli/tree/master)
+
 ![GITHUB](./images/snapshot.png "snapshot")
 
 ## Requirment
