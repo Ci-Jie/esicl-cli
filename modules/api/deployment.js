@@ -11,7 +11,10 @@ const create = () => {
     let obj = JSON.parse(template)
     obj.metadata.name = esicl.api.name
     obj.metadata.namespace = esicl.namespace
+    obj.metadata.labels.app = esicl.api.name
+    obj.spec.selector.matchLabels.app = esicl.api.name
     obj.spec.replicas = esicl.api.replicas
+    obj.spec.template.metadata.labels.app = esicl.api.name
     obj.spec.template.spec.containers.image = esicl.api.image
     axios.post(`https://${ kubernetes.master.ip }:6443/apis/apps/v1/namespaces/${ esicl.namespace }/deployments`, obj, {
         headers: {

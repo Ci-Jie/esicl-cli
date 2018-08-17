@@ -3,13 +3,13 @@ const esicl = {
   api: {
     name: 'esicl-api',
     replicas: 1,
-    image: 'cijie/nutc-dashboard-api:1.0.0',
+    image: 'cijie/esicl-api:1.0.0',
     port: 30017
   },
   ui: {
     name: 'esicl-ui',
     replicas: 1,
-    image: 'cijie/nutc-dashboard-ui:1.1.2',
+    image: 'cijie/esicl-ui:1.0.0',
     port: 30018
   }
 }

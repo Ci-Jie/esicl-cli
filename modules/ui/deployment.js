@@ -11,7 +11,10 @@ const create = () => {
     let obj = JSON.parse(template)
     obj.metadata.name = esicl.ui.name
     obj.metadata.namespace = esicl.namespace
+    obj.metadata.labels.app = esicl.ui.name
+    obj.spec.selector.matchLabels.app = esicl.ui.name
     obj.spec.replicas = esicl.ui.replicas
+    obj.spec.template.metadata.labels.app = esicl.ui.name
     obj.spec.template.spec.containers[0].image = esicl.ui.image
     obj.spec.template.spec.containers[0].env[0].value = kubernetes.master.ip
     obj.spec.template.spec.containers[0].env[1].value = esicl.api.port.toString()

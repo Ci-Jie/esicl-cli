@@ -11,6 +11,7 @@ const create = () => {
     let obj = JSON.parse(template)
     obj.metadata.name = esicl.ui.name
     obj.metadata.namespace = esicl.namespace
+    obj.spec.selector.app = esicl.ui.name
     obj.spec.ports[0].nodePort = esicl.ui.port
     axios.post(`https://${ kubernetes.master.ip }:6443/api/v1/namespaces/${ esicl.namespace }/services`, obj, {
         headers: {
